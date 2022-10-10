@@ -1,0 +1,90 @@
+package com.apy.make.persistence.entity;
+
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+
+// esta anotacion le esta diciendo a java que esta clase es la que se encarga de mapear una clase en la DB
+@Entity
+// el nombre que se estable hay es como esta en la base de datos
+@Table(name = "productos")
+public class Producto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Esta anotacion  valor hace que java genere este valor de manera automatica
+    @Column(name = "id_producto")
+    private Integer idProducto;
+
+    private  String nombre;
+
+    @Column(name = "id_categoria")
+    private Integer idCategoria;
+
+    @Column(name="codigo_barras")
+    private String codigoBarras;
+
+    @Column(name="precio_venta")
+    private Double precioVenta;
+
+    @Column(name="cantidad_stock")
+    private Integer cantidadStock;
+
+    private boolean estado;
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false) // esta es la forma de vincular una clase con otras, despues se debe ir a la clase  categoria y realizar
+    private  Categoria categoria;
+
+    public Integer getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getCodigoBarras() {
+        return codigoBarras;
+    }
+
+    public void setCodigoBarras(String codigoBarras) {
+        this.codigoBarras = codigoBarras;
+    }
+
+    public Double getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public void setPrecioVenta(Double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+
+    public Integer getCantidadStock() {
+        return cantidadStock;
+    }
+
+    public void setCantidadStock(Integer cantidadStock) {
+        this.cantidadStock = cantidadStock;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+}
