@@ -17,7 +17,16 @@ public class Categoria {
 
     @OneToMany(mappedBy = "categoria") // este es el segundo paso para unir los tablas, el mapperby se pone para  poner  el atributo que respalta la relacion
     private List<Producto> productos;
-// los get set se generan con alt+insert
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
+    // los get set se generan con alt+insert
     public Integer getIdCategoria() {
         return idCategoria;
     }

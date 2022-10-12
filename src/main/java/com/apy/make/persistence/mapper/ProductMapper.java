@@ -22,12 +22,12 @@ public interface ProductMapper {
             @Mapping(source = "categoria", target = "category"),
     })
     Product toProduct(Producto producto);
-    List<Product> toProduct(List<Producto> productos);
+
+    List<Product> toProducts(List<Producto> productos);
 
     @InheritConfiguration
     @Mapping(target = "codigoBarras", ignore = true)
     Producto toProducto(Product product);
-
 
 
 }

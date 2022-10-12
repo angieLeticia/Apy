@@ -28,9 +28,18 @@ public class Producto {
     private Integer cantidadStock;
 
     private boolean estado;
+
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false) // esta es la forma de vincular una clase con otras, despues se debe ir a la clase  categoria y realizar
     private  Categoria categoria;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     public Integer getIdProducto() {
         return idProducto;

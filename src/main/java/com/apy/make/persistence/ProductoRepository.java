@@ -16,27 +16,29 @@ public class ProductoRepository  implements ProductRepository {
     @Autowired
     private ProductoCrudRepository productoCrudRepository;
     // realiza la convercion de Producto a product
+    @Autowired
     private ProductMapper mapper;
 
     // este  metodo sirve para optener toda la lista de   producto de la tabla
+
     @Override
     public List<Product> getAll(){
         List<Producto> productos =(List<Producto>) productoCrudRepository.findAll();
-        return mapper.toProduct(productos);
+        return mapper.toProducts(productos);
 
     }
 
     @Override
     public Optional<List<Product>> getByCategory(int categoryId) {
         List<Producto> productos =productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
-        return Optional.of(mapper.toProduct(productos));
+        return Optional.of(mapper.toProducts(productos));
     }
 
     @Override
     public Optional<List<Product>> getScarseProducts(int quantity) {
         Optional<List<Producto>> productos = productoCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);
         // ya que no existe una mapiador que mapeer lista de opcinales  se crea a los producto un mapper
-        return productos.map(prods -> mapper.toProduct(prods));
+        return productos.map(prods -> mapper.toProducts(prods));
     }
 
     @Override

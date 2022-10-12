@@ -21,5 +21,5 @@ public interface CategoryMapper {
     // esa anotacion le dice a nuestro map que la convercion es inversa
     @InheritConfiguration
     @Mapping(target = "productos", ignore = true)
-    Category toCategoria(Category category);
+    Categoria toCategoria(Category category);
 }
