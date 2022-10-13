@@ -2,10 +2,7 @@ package com.apy.make.persistence.mapper;
 
 import com.apy.make.domain.Category;
 import com.apy.make.persistence.entity.Categoria;
-import org.mapstruct.InheritConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
@@ -19,7 +16,7 @@ public interface CategoryMapper {
     Category toCategoty(Categoria categoria);
 
     // esa anotacion le dice a nuestro map que la convercion es inversa
-    @InheritConfiguration
+    @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true)
     Categoria toCategoria(Category category);
 }

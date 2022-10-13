@@ -22,7 +22,7 @@ public class ProductService {
     public Optional<List<Product>>getByCategory(int categoryId){
         return productRepository.getByCategory(categoryId);
     }
-    public Product save (Product product){
+    public Product save(Product product){
         return  productRepository.save(product);
     }
      public boolean delete(int productId){
