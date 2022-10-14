@@ -16,7 +16,7 @@ public class Compra {
     private Integer idCompra;
 
     @Column(name = "id_cliente")
-    private Integer id_Cliente;
+    private Integer idCliente;
 
     private LocalDateTime fecha;
 
@@ -43,11 +43,11 @@ public class Compra {
     }
 
     public Integer getId_Cliente() {
-        return id_Cliente;
+        return idCliente;
     }
 
     public void setId_Cliente(Integer id_Cliente) {
-        this.id_Cliente = id_Cliente;
+        this.idCliente = id_Cliente;
     }
 
     public LocalDateTime getFecha() {
@@ -80,5 +80,32 @@ public class Compra {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void getProductos() {
+    }
+
+    public Integer getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Integer idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<ComprasProducto> getComprasProductos() {
+        return comprasProductos;
+    }
+
+    public void setComprasProductos(List<ComprasProducto> comprasProductos) {
+        this.comprasProductos = comprasProductos;
     }
 }
