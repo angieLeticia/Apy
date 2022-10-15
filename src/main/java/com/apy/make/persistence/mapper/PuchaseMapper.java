@@ -1,7 +1,5 @@
 package com.apy.make.persistence.mapper;
-
 import com.apy.make.domain.Purchase;
-import com.apy.make.domain.PurchaseItem;
 import com.apy.make.persistence.entity.Compra;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -17,9 +15,9 @@ public interface PuchaseMapper {
             @Mapping(source = "idCliente", target = "clientId"),
             @Mapping(source = "fecha", target = "date"),
             @Mapping(source = "medioPago", target = "paymentMethod"),
-            @Mapping(source = "Comentario", target = "comment"),
+            @Mapping(source = "comentario", target = "comment"),
             @Mapping(source = "estado", target = "state"),
-            @Mapping(source = "productos", target = "items"),
+            @Mapping(source = "comprasProductos", target = "items"),
 
 
     })

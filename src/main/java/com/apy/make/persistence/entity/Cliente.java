@@ -13,7 +13,7 @@ public class Cliente {
 
     private String apellido;
 
-    private int celular;
+    private long celular;
 
     private  String direccion;
 
@@ -47,11 +47,11 @@ public class Cliente {
         this.apellido = apellido;
     }
 
-    public int getCelular() {
+    public long getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(long celular) {
         this.celular = celular;
     }
 
