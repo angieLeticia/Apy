@@ -10,7 +10,7 @@ public class Cliente {
     private String id;
 
     private String nombre;
-
+@Column( name = "apellidos")
     private String apellido;
 
     private long celular;

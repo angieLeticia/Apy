@@ -75,8 +75,6 @@ public class Compra {
         this.estado = estado;
     }
 
-    public void getProductos() {
-    }
 
     public String getIdCliente() {
         return idCliente;

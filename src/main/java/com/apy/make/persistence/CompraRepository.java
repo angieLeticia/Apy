@@ -27,10 +27,6 @@ public class CompraRepository implements PurcheseRepository {
         return compraCrudRepository.findByIdCliente(clientId).map(compras -> mapper.toPurchases(compras));
     }
 
-    @Override
-    public Optional<List<Purchase>> getByCliente(Integer clientId) {
-        return Optional.empty();
-    }
 
     @Override
     public Purchase save(Purchase purchase) {

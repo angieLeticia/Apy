@@ -9,8 +9,5 @@ import java.util.SplittableRandom;
 public interface PurcheseRepository {
     List<Purchase> getAll();
     Optional<List<Purchase>> getByCliente(String clientId);
-
-    Optional<List<Purchase>> getByCliente(Integer clientId);
-
     Purchase save(Purchase purchase);
 }
