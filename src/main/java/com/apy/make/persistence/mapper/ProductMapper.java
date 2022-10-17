@@ -2,7 +2,10 @@ package com.apy.make.persistence.mapper;
 
 import com.apy.make.domain.Product;
 import com.apy.make.persistence.entity.Producto;
-import org.mapstruct.*;
+import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 
 import java.util.List;
 
@@ -19,7 +22,6 @@ public interface ProductMapper {
             @Mapping(source = "categoria", target = "category"),
     })
     Product toProduct(Producto producto);
-
     List<Product> toProducts(List<Producto> productos);
 
     @InheritInverseConfiguration

@@ -1,8 +1,10 @@
 package com.apy.make.persistence.mapper;
-
 import com.apy.make.domain.Category;
 import com.apy.make.persistence.entity.Categoria;
-import org.mapstruct.*;
+import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {

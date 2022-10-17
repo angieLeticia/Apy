@@ -2,7 +2,6 @@ package com.apy.make.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 // esta anotacion le esta diciendo a java que esta clase es la que se encarga de mapear una clase en la DB
@@ -31,7 +30,7 @@ public class Compra {
     @JoinColumn(name="id_cliente",insertable = false,updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProducto> comprasProductos;
 
     public Integer getIdCompra() {
@@ -76,14 +75,6 @@ public class Compra {
     }
 
 
-    public String getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
-    }
-
     public Cliente getCliente() {
         return cliente;
     }
@@ -100,4 +91,11 @@ public class Compra {
         this.comprasProductos = comprasProductos;
     }
 
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
+    }
 }

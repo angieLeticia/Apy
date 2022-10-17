@@ -4,10 +4,10 @@ import com.apy.make.domain.Purchase;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.SplittableRandom;
 
-public interface PurcheseRepository {
+public interface PurchaseRepository {
     List<Purchase> getAll();
-    Optional<List<Purchase>> getByCliente(String clientId);
+    Optional<List<Purchase>> getByClient(String clientId);
     Purchase save(Purchase purchase);
+
 }

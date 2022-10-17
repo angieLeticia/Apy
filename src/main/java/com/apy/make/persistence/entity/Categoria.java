@@ -13,7 +13,7 @@ public class Categoria {
 
     private String descripcion;
 
-    private boolean estado;
+    private Boolean estado;
 
     @OneToMany(mappedBy = "categoria") // este es el segundo paso para unir los tablas, el mapperby se pone para  poner  el atributo que respalta la relacion
     private List<Producto> productos;
@@ -43,11 +43,12 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-    public boolean isEstado() {
+    public Boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 }
+

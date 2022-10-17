@@ -21,13 +21,6 @@ public class Purchase {
         this.purchaseId = purchaseId;
     }
 
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
 
     public LocalDateTime getDate() {
         return date;
@@ -70,6 +63,15 @@ public class Purchase {
     public void setItems(List<PurchaseItem> items) {
         this.items = items;
     }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
 }
+
 
 

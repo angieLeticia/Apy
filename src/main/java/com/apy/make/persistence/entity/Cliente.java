@@ -8,13 +8,13 @@ import java.util.List;
 public class Cliente {
     @Id
     private String id;
-
     private String nombre;
-@Column( name = "apellidos")
+    @Column( name = "apellidos")
     private String apellido;
 
-    private long celular;
-
+    @Column(name ="celular")
+    private Long celular;
+    @Column(name ="direccion")
     private  String direccion;
 
     @Column(name="correo_electronico")
@@ -47,12 +47,20 @@ public class Cliente {
         this.apellido = apellido;
     }
 
-    public long getCelular() {
+    public Long getCelular() {
         return celular;
     }
 
-    public void setCelular(long celular) {
+    public void setCelular(Long celular) {
         this.celular = celular;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 
     public String getDireccion() {
